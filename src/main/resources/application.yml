@@ -1,0 +1,29 @@
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: 8080
+
+spring:
+  # 开发环境
+  profiles:
+    active: dev
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.88:3306/sgapp?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: 12345678
+
+  # Redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  type-aliases-package: com.hyperfusion.app.entity
+  global-config:
+    db-config:
+      id-type: auto
+
+knife4j:
+  enable: true
